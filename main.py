@@ -1,9 +1,10 @@
+import pickle
+
+import numpy as np
+import pandas as pd
 from flask import Flask, request, render_template
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
-import pandas as pd
-import numpy as np
-import pickle
 
 # pip freeze > requirements.txt
 app = Flask(__name__)
@@ -170,4 +171,4 @@ def home():
 
 
 if __name__ == '__main__':
-    app.run(debug=True, host="0.0.0.0")
+    app.run(debug=True, host="0.0.0.0", port="5000")
