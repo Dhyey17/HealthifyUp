@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+
+
+
+<section class="new" style="height: 30%;width: 100%;margin-top: 5%;">
+  <h2 style="margin-left: 40%;">Diabetes Prediction Predictor</h2>
+  <h5 style="margin-left: 37%;">A Machine Learning Algorithm That Predict Diabetes Patient</h5>
+</section>
+
+
+
+{% if y_pred==0 %}
+
+<div id="content">
+  <h1 style="color: green;">Great You Don't Have Diabetes Symptoms</h1>
+</div>
+
+
+{% endif %}
+
+{% if y_pred==1 %}
+
+<h1 style="color: red;">You have Diabetes Symptoms</h1>
+
+{% endif %}
+
+
+
+{% endblock %}
