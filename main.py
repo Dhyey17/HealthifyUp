@@ -1,10 +1,10 @@
-import pickle
 
 import numpy as np
 import pandas as pd
 from flask import Flask, request, render_template
 from sklearn.linear_model import LogisticRegression
 from sklearn.model_selection import train_test_split
+import fickling
 
 # pip freeze > requirements.txt
 app = Flask(__name__)
@@ -91,7 +91,7 @@ def kidney():
         return render_template('kidneyform.html')
     else:
         with open('kidney_predict', 'rb') as f:
-            model = pickle.load(f)
+            model = fickling.load(f)
         Age = int(request.form['Age'])
         Blood_Pressure = int(request.form['Blood_Pressure'])
         Specific_Gravity = float(request.form['Specific_Gravity'])
